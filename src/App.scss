@@ -1,0 +1,14 @@
+@use "./assets/styles/abstracts/variables" as *;
+@use "./assets/styles/abstracts/typography" as *;
+@use "./assets/styles/base/resets" as *;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $primary-font;
+}
+
+body {
+    background-color: $deep-navy;
+}

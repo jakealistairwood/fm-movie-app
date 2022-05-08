@@ -1,0 +1,14 @@
+@use "../../assets/styles/components/forms" as *;
+@use "../../assets/styles/components/buttons" as *;
+
+.login {
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+    img {
+        margin: 5rem 0;
+    }
+}
