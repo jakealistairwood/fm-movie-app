@@ -1,0 +1,7 @@
+@use "../../assets/styles/abstracts/variables" as *;
+
+.navbar {
+    grid-area: navbar;
+    margin: 1rem;
+    background-color: $navy;
+}
