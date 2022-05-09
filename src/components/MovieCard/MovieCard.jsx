@@ -2,6 +2,7 @@ import React from "react";
 import "./MovieCard.scss";
 import TVSeriesIcon from "../../assets/icon-category-tv.svg";
 import MovieIcon from "../../assets/icon-category-movie.svg";
+import BookmarkIcon from "../../assets/icon-bookmark-empty.svg";
 
 const MovieCard = ({ movie }) => {
     const renderCategoryIcon =
@@ -9,11 +10,16 @@ const MovieCard = ({ movie }) => {
 
     return (
         <div className="movie-card">
-            <img
+            <div
                 className="movie-card__img"
-                src={movie.thumbnail.regular.large}
-                alt="movie-thumbnail"
-            />
+                style={{
+                    backgroundImage: `url(${movie.thumbnail.regular.large})`,
+                }}
+            >
+                <div className="trending-movie__bookmark">
+                    <img src={BookmarkIcon} alt="add-to-favorites" />
+                </div>
+            </div>
             <div className="movie-card__info">
                 <p className="sm-text">{movie.year}</p>
                 <div className="circle-detail"></div>
@@ -24,7 +30,7 @@ const MovieCard = ({ movie }) => {
                 <div className="circle-detail"></div>
                 <p className="sm-text">{movie.rating}</p>
             </div>
-            <h4 className="movie-card__title">{movie.title}</h4>
+            <h5 className="movie-card__title">{movie.title}</h5>
         </div>
     );
 };

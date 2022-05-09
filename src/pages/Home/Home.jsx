@@ -4,20 +4,9 @@ import movieData from "../../assets/data.json";
 import Trending from "../../components/Trending/Trending";
 import MovieCard from "../../components/MovieCard/MovieCard";
 import uuid from "react-uuid";
+import { trendingMovies, recommendedMovies } from "../../services/filterMovies";
 
 const Home = () => {
-    console.log(movieData);
-
-    const trendingMovies = movieData.filter(movie => {
-        return movie.isTrending;
-    });
-
-    const recommendedMovies = movieData.filter(movie => {
-        return movie.isTrending == false;
-    });
-
-    console.log(recommendedMovies);
-
     const renderTrendingMovies = trendingMovies.map(movie => {
         return <Trending key={uuid()} movie={movie} />;
     });
