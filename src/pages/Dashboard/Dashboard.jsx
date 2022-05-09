@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./Dashboard.scss";
 import Navbar from "../../components/Navbar/Navbar";
 import Search from "../../components/Search/Search";
@@ -6,9 +7,15 @@ import Home from "../Home/Home";
 import Movies from "../Movies/Movies";
 
 const Dashboard = () => {
+    const [searchInput, setSearchInput] = useState("");
+
+    const handleSearchInput = e => {
+        setSearchInput(e.target.value);
+    };
+
     return (
         <div className="container">
-            <Search />
+            <Search handleSearchInput={handleSearchInput} />
             <Navbar />
             <main className="dashboard">
                 <Routes>

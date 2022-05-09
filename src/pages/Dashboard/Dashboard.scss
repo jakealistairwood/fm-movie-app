@@ -1,15 +1,16 @@
 .container {
     display: grid;
-    grid-template-columns: 96px auto;
-    grid-template-rows: max-content auto;
+    grid-template-columns: 126px auto;
+    grid-template-rows: 100px auto;
     min-height: 100vh;
-    border: 2px solid red;
     grid-template-areas:
         "navbar searchbar"
         "navbar dashboard";
-
+    width: 100%;
+    padding: 2rem 0;
     .dashboard {
         grid-area: dashboard;
-        border: 2px solid red;
+        margin-inline: 2.25rem;
+        overflow-x: hidden;
     }
 }

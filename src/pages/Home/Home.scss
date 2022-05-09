@@ -1,0 +1,31 @@
+@use "../../assets/styles/abstracts/variables" as *;
+
+.home {
+    display: flex;
+    flex-direction: column;
+
+    &__heading {
+        color: $white;
+        margin-bottom: 1.5625rem;
+    }
+
+    &__trending-movies {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        gap: 2.5rem;
+        overflow-x: scroll;
+        margin-bottom: 2.5rem;
+
+        // &::-webkit-scrollbar {
+        //     display: none;
+        // }
+    }
+
+    .movies-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        row-gap: 2rem;
+        column-gap: 2.5rem;
+    }
+}

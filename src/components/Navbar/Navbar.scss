@@ -1,7 +1,27 @@
 @use "../../assets/styles/abstracts/variables" as *;
+@use "../../assets/styles/base/resets" as *;
 
 .navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     grid-area: navbar;
     margin: 1rem;
+    padding: 2rem;
     background-color: $navy;
+    border-radius: 20px;
+
+    &__nav-links {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        margin-top: 100px;
+    }
+
+    &__user-avatar {
+        margin-top: auto;
+        border: 1px solid white;
+        border-radius: 50%;
+        width: 2.5rem;
+    }
 }

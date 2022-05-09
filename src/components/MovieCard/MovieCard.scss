@@ -1,0 +1,38 @@
+@use "../../assets/styles/abstracts/variables" as *;
+
+.movie-card {
+    display: flex;
+    flex-direction: column;
+
+    &__img {
+        width: 100%;
+        border-radius: 8px;
+    }
+
+    &__info {
+        display: flex;
+        column-gap: 0.5rem;
+        align-items: center;
+        margin-top: 0.5rem;
+        color: $white;
+        opacity: 0.75;
+
+        .circle-detail {
+            height: 3px;
+            width: 3px;
+            background-color: $white;
+            border-radius: 50%;
+            opacity: 0.75;
+        }
+
+        .movie-card__category {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+    }
+
+    &__title {
+        color: $white;
+    }
+}

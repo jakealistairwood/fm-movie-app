@@ -1,6 +1,26 @@
+@use "../../assets/styles/abstracts/variables" as *;
+
 .searchbar {
     display: flex;
     align-items: center;
     grid-area: searchbar;
-    border: 2px solid yellow;
+    width: 100%;
+    padding-inline: 2.25rem;
+
+    &__input {
+        background-color: transparent;
+        color: $white;
+        font-size: 1.5rem;
+        font-weight: 300;
+        border: none;
+        border-bottom: 1px solid transparent;
+        outline: none;
+        width: 100%;
+        margin-inline: 20px;
+        padding: 1rem 0;
+
+        &:focus {
+            border-bottom: 1px solid $slateGrey;
+        }
+    }
 }
