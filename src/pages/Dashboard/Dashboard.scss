@@ -1,7 +1,7 @@
 .container {
     display: grid;
     grid-template-columns: 126px auto;
-    grid-template-rows: 100px auto;
+    grid-template-rows: 2rem auto;
     min-height: 100vh;
     grid-template-areas:
         "navbar searchbar"

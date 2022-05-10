@@ -1,0 +1,18 @@
+@use "../../assets/styles/abstracts/variables" as *;
+
+.tv-series {
+    display: flex;
+    flex-direction: column;
+
+    &__heading {
+        color: $white;
+        margin-bottom: 1.5625rem;
+    }
+
+    .movies-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        row-gap: 2rem;
+        column-gap: 2.5rem;
+    }
+}

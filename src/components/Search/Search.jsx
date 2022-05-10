@@ -1,7 +1,7 @@
 import "./Search.scss";
 import SearchIcon from "../../assets/icon-search.svg";
 
-const Search = ({ handleSearchInput }) => {
+const Search = ({ handleSearchInput, placeholderText, handleSearch }) => {
     return (
         <div className="searchbar">
             <img
@@ -12,8 +12,8 @@ const Search = ({ handleSearchInput }) => {
             <input
                 className="searchbar__input"
                 type="text"
-                placeholder="Search for movies or TV series"
-                onChange={handleSearchInput}
+                placeholder={placeholderText}
+                onChange={handleSearch}
             />
         </div>
     );

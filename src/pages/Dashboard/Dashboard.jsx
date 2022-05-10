@@ -5,6 +5,7 @@ import Search from "../../components/Search/Search";
 import { Routes, Route } from "react-router-dom";
 import Home from "../Home/Home";
 import Movies from "../Movies/Movies";
+import TVSeries from "../TVSeries/TVSeries";
 
 const Dashboard = () => {
     const [searchInput, setSearchInput] = useState("");
@@ -15,12 +16,13 @@ const Dashboard = () => {
 
     return (
         <div className="container">
-            <Search handleSearchInput={handleSearchInput} />
+            {/* <Search handleSearchInput={handleSearchInput} /> */}
             <Navbar />
             <main className="dashboard">
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/movies" element={<Movies />} />
+                    <Route path="/tv-series" element={<TVSeries />} />
                 </Routes>
             </main>
         </div>
