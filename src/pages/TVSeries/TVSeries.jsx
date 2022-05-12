@@ -26,14 +26,14 @@ const TVSeries = () => {
                 placeholderText={"Search for TV series"}
                 handleSearch={handleSearch}
             />
-            <div className="tv-series">
+            <section className="tv-series">
                 <h2 className="tv-series__heading">
                     {searchTerm
                         ? `Found ${filteredTVSeriesCards.length} result(s) for '${searchTerm}'`
                         : "TV Series"}
                 </h2>
                 <div className="movies-container">{renderTVSeriesCards}</div>
-            </div>
+            </section>
         </>
     );
 };

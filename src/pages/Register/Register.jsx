@@ -3,12 +3,15 @@ import "./Register.scss";
 import Logo from "../../assets/logo.svg";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
     const [user, setUser] = useState(false);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [passwordConfirmation, setPasswordConfirmation] = useState("");
+
+    let navigate = useNavigate();
 
     const handleSignUp = e => {
         e.preventDefault();
@@ -24,6 +27,7 @@ const Register = () => {
                     const user = userCredential.user;
                     console.log(user);
                     setUser(user);
+                    navigate("/dashboard/");
                 })
                 .catch(err => {
                     const errorCode = err.code;

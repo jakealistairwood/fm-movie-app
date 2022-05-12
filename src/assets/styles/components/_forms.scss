@@ -24,6 +24,10 @@ form {
         font-family: $primary-font;
         color: $white;
 
+        &:focus {
+            border-bottom: 1px solid $white;
+        }
+
         &::placeholder {
             font-size: 18px;
             color: $white;

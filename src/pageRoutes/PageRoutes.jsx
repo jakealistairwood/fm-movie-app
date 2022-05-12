@@ -9,7 +9,7 @@ const PageRoutes = () => {
             <Router>
                 <Routes>
                     <Route default path="/register" element={<Register />} />
-                    <Route default path="/login" element={<Login />} />
+                    <Route path="/login" element={<Login />} />
                     <Route path="/dashboard/*" element={<Dashboard />} />
                 </Routes>
             </Router>

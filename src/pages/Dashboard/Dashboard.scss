@@ -8,6 +8,12 @@
         "navbar dashboard";
     width: 100%;
     padding: 2rem 0;
+
+    @media screen and (max-width: 768px) {
+        display: flex;
+        flex-direction: column;
+    }
+
     .dashboard {
         grid-area: dashboard;
         margin-inline: 2.25rem;
