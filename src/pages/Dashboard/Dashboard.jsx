@@ -1,7 +1,5 @@
-import { useState } from "react";
 import "./Dashboard.scss";
 import Navbar from "../../components/Navbar/Navbar";
-import Search from "../../components/Search/Search";
 import { Routes, Route } from "react-router-dom";
 import Home from "../Home/Home";
 import Movies from "../Movies/Movies";
@@ -9,15 +7,8 @@ import TVSeries from "../TVSeries/TVSeries";
 import Favourites from "../Favourites/Favourites";
 
 const Dashboard = () => {
-    const [searchInput, setSearchInput] = useState("");
-
-    const handleSearchInput = e => {
-        setSearchInput(e.target.value);
-    };
-
     return (
         <div className="container">
-            {/* <Search handleSearchInput={handleSearchInput} /> */}
             <Navbar />
             <main className="dashboard">
                 <Routes>

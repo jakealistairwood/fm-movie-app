@@ -3,11 +3,14 @@ import "./Home.scss";
 import Trending from "../../components/Trending/Trending";
 import MovieCard from "../../components/MovieCard/MovieCard";
 import Search from "../../components/Search/Search";
+import movieData from "../../assets/data.json";
 import uuid from "react-uuid";
 import {
     trendingMovies,
     recommendedMovies,
     movieList,
+    filterBySearchTerm,
+    getUpdatedSearchLength,
 } from "../../services/filterMovies";
 
 const Home = () => {
@@ -17,9 +20,9 @@ const Home = () => {
         setSearchTerm(e.target.value);
     };
 
-    let filteredCards = movieList.filter(movie => {
-        return movie.title.toLowerCase().includes(searchTerm.toLowerCase());
-    });
+    let filteredCards = filterBySearchTerm(movieData, searchTerm);
+
+    let updatedSearchLength = getUpdatedSearchLength(filteredCards);
 
     const renderFilteredCards = filteredCards.map(movie => {
         return <MovieCard key={uuid()} movie={movie} />;
@@ -54,7 +57,7 @@ const Home = () => {
                 ) : (
                     <>
                         <h2 className="home__heading">
-                            Found {filteredCards.length} result(s) for '
+                            Found {updatedSearchLength} result(s) for '
                             {searchTerm}'
                         </h2>
                         <div className="home__recommended-movies movies-container">

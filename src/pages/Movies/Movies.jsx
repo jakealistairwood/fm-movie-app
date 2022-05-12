@@ -1,6 +1,11 @@
 import { useState, useEffect } from "react";
 import "./Movies.scss";
-import { movieList } from "../../services/filterMovies";
+import movieData from "../../assets/data.json";
+import {
+    filterByCategory,
+    filterBySearchTerm,
+    getUpdatedSearchLength,
+} from "../../services/filterMovies";
 import MovieCard from "../../components/MovieCard/MovieCard";
 import Search from "../../components/Search/Search";
 import uuid from "react-uuid";
@@ -12,13 +17,14 @@ const Movies = () => {
         setSearchTerm(e.target.value);
     };
 
-    let filteredMovieCards = movieList.filter(movie => {
-        return movie.title.toLowerCase().includes(searchTerm.toLowerCase());
-    });
+    let filteredMovies = filterByCategory(movieData, "Movie");
+    let updatedMoviesList = filterBySearchTerm(filteredMovies, searchTerm);
 
-    const renderMovieCards = filteredMovieCards.map(movie => {
+    const renderMovieCards = updatedMoviesList.map(movie => {
         return <MovieCard movie={movie} key={uuid()} />;
     });
+
+    let updatedSearchLength = getUpdatedSearchLength(updatedMoviesList);
 
     return (
         <>
@@ -29,7 +35,7 @@ const Movies = () => {
             <section className="movies">
                 <h2 className="movies__heading">
                     {searchTerm
-                        ? `Found ${filteredMovieCards.length} result(s) for '${searchTerm}'`
+                        ? `Found ${updatedSearchLength} result(s) for '${searchTerm}'`
                         : `Movies`}
                 </h2>
                 <div className="movies-container">{renderMovieCards}</div>
