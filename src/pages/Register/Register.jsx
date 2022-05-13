@@ -5,8 +5,7 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase";
 import { useNavigate } from "react-router-dom";
 
-const Register = () => {
-    const [user, setUser] = useState(false);
+const Register = ({ isAuthenticated }) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [passwordConfirmation, setPasswordConfirmation] = useState("");
@@ -26,7 +25,7 @@ const Register = () => {
                 .then(userCredential => {
                     const user = userCredential.user;
                     console.log(user);
-                    setUser(user);
+                    isAuthenticated(user);
                     navigate("/dashboard/");
                 })
                 .catch(err => {

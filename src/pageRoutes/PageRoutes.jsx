@@ -1,16 +1,34 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+    BrowserRouter as Router,
+    Routes,
+    Route,
+    Navigate,
+} from "react-router-dom";
 import Register from "../pages/Register/Register";
 import Login from "../pages/Login/Login";
 import Dashboard from "../pages/Dashboard/Dashboard";
+import PrivateRoutes from "./PrivateRoutes";
 
-const PageRoutes = () => {
+const PageRoutes = ({ user, isAuthenticated }) => {
     return (
         <>
             <Router>
                 <Routes>
-                    <Route default path="/register" element={<Register />} />
-                    <Route path="/login" element={<Login />} />
-                    <Route path="/dashboard/*" element={<Dashboard />} />
+                    <Route
+                        exact
+                        path="/"
+                        element={<Register isAuthenticated={isAuthenticated} />}
+                    />
+                    <Route
+                        path="/login"
+                        element={<Login isAuthenticated={isAuthenticated} />}
+                    />
+                    <Route element={<PrivateRoutes user={user} />}>
+                        <Route
+                            path="/dashboard/*"
+                            element={<Dashboard user={user} />}
+                        />
+                    </Route>
                 </Routes>
             </Router>
         </>

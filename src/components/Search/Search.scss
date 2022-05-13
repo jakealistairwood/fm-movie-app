@@ -5,8 +5,11 @@
     align-items: center;
     grid-area: searchbar;
     width: 100%;
-    // padding-inline: 2.25rem;
     padding-bottom: 2.125rem;
+
+    @media screen and (max-width: 580px) {
+        margin-top: 1.5rem;
+    }
 
     &__input {
         background-color: transparent;

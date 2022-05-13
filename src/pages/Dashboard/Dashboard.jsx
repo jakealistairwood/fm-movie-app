@@ -8,7 +8,7 @@ import Movies from "../Movies/Movies";
 import TVSeries from "../TVSeries/TVSeries";
 import Favourites from "../Favourites/Favourites";
 
-const Dashboard = () => {
+const Dashboard = ({ user }) => {
     const [bookmarked, setBookmarked] = useState(false);
     const [movieList, setMovieList] = useState(movieData);
 
@@ -18,7 +18,7 @@ const Dashboard = () => {
 
     return (
         <div className="container">
-            <Navbar />
+            <Navbar user={user} />
             <main className="dashboard">
                 <Routes>
                     <Route

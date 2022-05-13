@@ -24,11 +24,27 @@
         width: 100%;
     }
 
+    @media screen and (max-width: 580px) {
+        margin: 0;
+        padding: 1rem;
+        border-radius: 0;
+    }
+
     &__nav-links {
         display: flex;
         flex-direction: column;
         gap: 2rem;
         margin-top: 100px;
+        &:hover {
+            svg {
+                path {
+                    transition: 0.3s ease-in-out;
+                    &:hover {
+                        fill: $primary-red;
+                    }
+                }
+            }
+        }
 
         @media screen and (max-width: 768px) {
             flex-direction: row;

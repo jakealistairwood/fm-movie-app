@@ -5,8 +5,7 @@ import { auth } from "../../firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 
-const Login = () => {
-    const [user, setUser] = useState(false);
+const Login = ({ isAuthenticated }) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
@@ -18,7 +17,8 @@ const Login = () => {
             signInWithEmailAndPassword(auth, email, password)
                 .then(userCredential => {
                     const user = userCredential.user;
-                    setUser(user);
+                    isAuthenticated(user);
+                    // setUser(user);
                     navigate("/dashboard/");
                 })
                 .catch(err => {
