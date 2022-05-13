@@ -13,14 +13,14 @@ import {
     getUpdatedSearchLength,
 } from "../../services/filterMovies";
 
-const Home = () => {
+const Home = ({ movieList, toggleBookmark }) => {
     const [searchTerm, setSearchTerm] = useState("");
 
     const handleSearch = e => {
         setSearchTerm(e.target.value);
     };
 
-    let filteredCards = filterBySearchTerm(movieData, searchTerm);
+    let filteredCards = filterBySearchTerm(movieList, searchTerm);
 
     let updatedSearchLength = getUpdatedSearchLength(filteredCards);
 

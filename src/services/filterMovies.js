@@ -16,6 +16,12 @@ export const movieList = movieData.filter(movie => {
     return movie.category === "Movie";
 });
 
+export const filterByBookmarked = movieArr => {
+    return movieArr.filter(movie => {
+        return movie.isBookmarked;
+    });
+};
+
 export const filterByCategory = (movieArr, categoryType) => {
     return movieArr.filter(movie => {
         return movie.category === categoryType;

@@ -1,0 +1,26 @@
+@use "../../assets/styles/abstracts/variables" as *;
+
+.bookmarked {
+    display: flex;
+    flex-direction: column;
+
+    &__heading {
+        color: $white;
+        margin-bottom: 1.5625rem;
+    }
+
+    &__movies {
+        margin-bottom: 2.5rem;
+    }
+
+    .movies-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        row-gap: 2rem;
+        column-gap: 2.5rem;
+
+        @media screen and (max-width: 768px) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+}
