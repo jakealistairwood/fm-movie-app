@@ -53,6 +53,12 @@
         }
     }
 
+    &__nav-link {
+        .active > svg > path {
+            fill: #fff;
+        }
+    }
+
     &__user-avatar {
         margin-top: auto;
         border: 1px solid white;

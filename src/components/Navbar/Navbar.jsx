@@ -13,23 +13,45 @@ const Navbar = () => {
             <img className="navbar__logo" src={Logo} alt="app-logo" />
             <ul className="navbar__nav-links">
                 <li className="navbar__nav-link">
-                    <NavLink to="/dashboard">
+                    <NavLink
+                        to="/dashboard"
+                        className={({ isActive }) =>
+                            isActive ? "active" : undefined
+                        }
+                        end
+                        // activeClassName="active"
+                    >
                         {/* <img src={HomeIcon} alt="link-homepage" /> */}
                         <HomeIcon />
                     </NavLink>
                 </li>
                 <li className="navbar__nav-link">
-                    <NavLink to="/dashboard/movies">
+                    <NavLink
+                        to="/dashboard/movies"
+                        className={({ isActive }) =>
+                            isActive ? "active" : undefined
+                        }
+                    >
                         <MoviesIcon />
                     </NavLink>
                 </li>
                 <li className="navbar__nav-link">
-                    <NavLink to="/dashboard/tv-series">
+                    <NavLink
+                        to="/dashboard/tv-series"
+                        className={({ isActive }) =>
+                            isActive ? "active" : undefined
+                        }
+                    >
                         <TVSeriesIcon />
                     </NavLink>
                 </li>
                 <li className="navbar__nav-link">
-                    <NavLink to="/dashboard/favourites">
+                    <NavLink
+                        to="/dashboard/favourites"
+                        className={({ isActive }) =>
+                            isActive ? "active" : undefined
+                        }
+                    >
                         <BookmarkIcon />
                     </NavLink>
                 </li>
