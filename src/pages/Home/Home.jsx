@@ -3,17 +3,15 @@ import "./Home.scss";
 import Trending from "../../components/Trending/Trending";
 import MovieCard from "../../components/MovieCard/MovieCard";
 import Search from "../../components/Search/Search";
-import movieData from "../../assets/data.json";
 import uuid from "react-uuid";
 import {
     trendingMovies,
     recommendedMovies,
-    movieList,
     filterBySearchTerm,
     getUpdatedSearchLength,
 } from "../../services/filterMovies";
 
-const Home = ({ movieList, toggleBookmark }) => {
+const Home = ({ movieList }) => {
     const [searchTerm, setSearchTerm] = useState("");
 
     const handleSearch = e => {

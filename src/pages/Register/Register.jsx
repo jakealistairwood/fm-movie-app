@@ -3,7 +3,7 @@ import "./Register.scss";
 import Logo from "../../assets/logo.svg";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 const Register = ({ isAuthenticated }) => {
     const [email, setEmail] = useState("");
@@ -70,6 +70,9 @@ const Register = ({ isAuthenticated }) => {
                 <button className="register-form__btn primary-btn md-text">
                     Create an account
                 </button>
+                <p className="register-form__message md-text">
+                    Already have an account? <Link to="/login">Login</Link>
+                </p>
             </form>
         </main>
     );

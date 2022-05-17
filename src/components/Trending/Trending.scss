@@ -13,6 +13,11 @@
     padding-inline: 1.5rem;
     padding-bottom: 1.5rem;
 
+    @media screen and (max-width: 580px) {
+        min-width: 240px;
+        height: 140px;
+    }
+
     &__bookmark {
         @include flex-center;
         background-color: $deep-navy;
@@ -24,6 +29,13 @@
         width: 2.5rem;
         border-radius: 50%;
         cursor: pointer;
+
+        @media screen and (max-width: 580px) {
+            right: 0.5rem;
+            top: 0.5rem;
+            height: 2rem;
+            width: 2rem;
+        }
     }
 
     &__overview {
@@ -32,6 +44,11 @@
 
         h3 {
             color: $white;
+
+            @media screen and (max-width: 580px) {
+                font-size: 0.9375rem;
+                font-weight: 500;
+            }
         }
     }
 }

@@ -3,7 +3,7 @@ import "./Login.scss";
 import Logo from "../../assets/logo.svg";
 import { auth } from "../../firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 const Login = ({ isAuthenticated }) => {
     const [email, setEmail] = useState("");
@@ -55,6 +55,9 @@ const Login = ({ isAuthenticated }) => {
                 <button className="login-form__btn primary-btn md-text">
                     Login to your account
                 </button>
+                <p className="login-form__message md-text">
+                    Don't have an account? <Link to="/">Sign Up</Link>
+                </p>
             </form>
         </main>
     );

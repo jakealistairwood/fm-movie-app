@@ -1,3 +1,4 @@
+@use "../../assets/styles/abstracts/variables" as *;
 @use "../../assets/styles/components/forms" as *;
 @use "../../assets/styles/components/buttons" as *;
 
@@ -10,5 +11,20 @@
 
     img {
         margin: 5rem 0;
+    }
+
+    .register-form {
+        &__message {
+            margin-top: 1.5rem;
+            text-align: center;
+            color: $white;
+            a {
+                color: $primary-red;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
     }
 }

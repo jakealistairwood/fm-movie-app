@@ -27,5 +27,9 @@
         &:focus {
             border-bottom: 1px solid $slateGrey;
         }
+
+        @media screen and (max-width: 580px) {
+            font-size: 1rem;
+        }
     }
 }
