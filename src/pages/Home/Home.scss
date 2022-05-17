@@ -1,4 +1,5 @@
 @use "../../assets/styles/abstracts/variables" as *;
+@use "../../assets/styles/layout/grid" as *;
 
 .home {
     display: flex;
@@ -24,24 +25,5 @@
         // &::-webkit-scrollbar {
         //     display: none;
         // }
-    }
-
-    .movies-container {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        row-gap: 2rem;
-        column-gap: 2.5rem;
-
-        @media screen and (max-width: 768px) {
-            grid-template-columns: repeat(3, 1fr);
-            row-gap: 1.5rem;
-            column-gap: 1.8125rem;
-        }
-
-        @media screen and (max-width: 580px) {
-            grid-template-columns: repeat(2, 1fr);
-            row-gap: 1rem;
-            column-gap: 0.9375rem;
-        }
     }
 }
